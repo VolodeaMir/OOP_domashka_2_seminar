@@ -1,0 +1,36 @@
+package task2;
+
+// Класс Кот
+class Cat implements JumpableRunnable {
+    private String name;
+    private int maxRunDistance;
+    private int maxJumpHeight;
+
+    public Cat(String name, int maxRunDistance, int maxJumpHeight) {
+        this.name = name;
+        this.maxRunDistance = maxRunDistance;
+        this.maxJumpHeight = maxJumpHeight;
+    }
+
+    @Override
+    public boolean run(int distance) {
+        if (distance <= maxRunDistance) {
+            System.out.println("Кот " + name + " пробежал " + distance + " м.");
+            return true;
+        } else {
+            System.out.println("Кот " + name + " не смог пробежать " + distance + " м.");
+            return false;
+        }
+    }
+
+    @Override
+    public boolean jump(int height) {
+        if (height <= maxJumpHeight) {
+            System.out.println("Кот " + name + " перепрыгнул стену высотой " + height + " м.");
+            return true;
+        } else {
+            System.out.println("Кот " + name + " не смог перепрыгнуть стену высотой " + height + " м.");
+            return false;
+        }
+    }
+}
